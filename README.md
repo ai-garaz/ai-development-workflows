@@ -1,113 +1,96 @@
 # AI Development Workflows
 
-A collection of structured prompts and coding rules for AI-assisted software development, designed to help development teams work more effectively with AI coding assistants like Claude Code, GitHub Copilot, Codex, and Gemini.
+A collection of structured prompts, coding rules, and real-world examples for AI-assisted software development. Designed to help development teams work more effectively with AI coding assistants like Claude Code, GitHub Copilot, Codex, and Gemini.
 
 ## What's Inside
 
-This repository contains battle-tested workflows and coding standards developed through real-world project experience:
+### 1. Developer Toolkit
 
-- **Agent Workflows** — Structured prompts for PRD creation, planning, and implementation
-- **Coding Rules** — Language and framework-specific best practices
-- **API Documentation Standards** — Guidelines for reading and writing API documentation
+Drop-in rules and workflow prompts you can add to any project:
 
-## Tech Stack
+- **Agent Workflows** — Structured prompts for PRD creation, task planning, and implementation
+- **Coding Rules** — Language and framework-specific best practices (Angular 20+, PrimeNG 20+, Fastify/TypeScript)
+- **API Documentation Standards** — Guidelines for reading and writing OpenAPI documentation
 
-These workflows are **optimized for**:
-- **Frontend**: Angular 20+ with PrimeNG 20+
-- **Backend**: Fastify (TypeScript) with Node.js ESM modules
-- **API**: REST with OpenAPI 3.0.3 documentation
+The toolkit lives at the root of this repository. `CLAUDE.md` and `AGENTS.md` are auto-detected by AI assistants when placed in your project root.
 
-However, the **core workflow patterns** (PRD → Planning → Building) are framework-agnostic and can be adapted to any stack.
+**Quick start:**
+1. Copy `CLAUDE.md`, `AGENTS.md`, `documentation/`, and `rules-for-agents/` to your project root
+2. Create `documentation/about-project.md` with your project details (see template)
+3. AI assistants auto-detect the rules and follow the workflows
 
-## Quick Start
+The coding rules are optimized for **Angular 20+ / PrimeNG 20+ / Fastify (TypeScript)**, but the workflow patterns (PRD → Planning → Building) are framework-agnostic and can be adapted to any stack.
 
-Simply extract the contents into any project directory (we recommend starting with a test project). The included files will automatically be recognized by:
+### 2. Real-World Examples
 
-- **Claude Code** — via `CLAUDE.md`
-- **Codex, Gemini, GitHub Copilot** — via `AGENTS.md`
+Prompts and workflows from our production AI-assisted development system. These are the actual rules, commands, and procedures that power our day-to-day development with AI agents:
 
-Both files contain the same instructions optimized for different AI assistants.
+- **Agent rules** — how we structure our CLAUDE.md for a development agent
+- **Commands** — review and quality prompts we invoke during development
+- **Procedures** — step-by-step workflows for feature exploration and implementation
+- **Task lifecycle example** — a complete feature from discovery through delivery
 
-### Important: First-Time Setup
+These are shared as practical inspiration — patterns that work well for us. Every team's codebase, tools, and process are different, so adapt what resonates and ignore what doesn't.
 
-After copying files to your project:
+See [`real-world-examples/`](real-world-examples/) for details.
 
-1. **Create `documentation/about-project.md`** with your project details (see template below)
-2. **Optional**: Update tech stack references in `rules-for-agents/coding/001-general-coding-rules.md` if you're not using Angular/Fastify
+### 3. System Architecture Insights
 
-**Note**: The workflows use generic terminology like "this project" and "this feature" - you can use them as-is without needing to find-and-replace project names.
+For teams considering building a multi-agent AI development system: an overview of patterns that work well in our production setup.
 
-**about-project.md template:**
-```markdown
-# [Your Project Name]
+**Important**: This is not an exhaustive guide or a turnkey system. It's a curated look at design decisions we've found valuable after running a multi-agent system in production. It's meant to inform your own thinking if you decide to build something similar — not as a blueprint to follow.
 
-## Overview
-Brief description of what your project does.
+Topics covered:
+- Multi-agent architecture and orchestration
+- Memory and knowledge management
+- Task management with YAML schemas
+- Agent-to-agent communication
+- Recursive self-improvement through failure tracking
 
-## Tech Stack
-- Frontend: [Your framework]
-- Backend: [Your framework]
-- Database: [Your database]
+See [`system-architecture/`](system-architecture/) for details.
 
-## Project Goals
-What you're building and why.
-```
+### Bonus
 
-## How to Use
+[`bonus/the-day-i-met-onyx.md`](bonus/the-day-i-met-onyx.md) — A conversation transcript from the day our first AI agent chose its own name and wrote its own identity document. Included as something we found interesting about AI collaboration, not as documentation or a recommendation.
 
-1. Copy the contents to your project root
-2. Claude Code will automatically detect `CLAUDE.md`, other agents should automatically detect `AGENTS.md` and follow the workflows
-3. Try commands like:
-   - "Create a PRD for [feature]"
-   - "Plan the implementation"
-   - "Build the feature"
-
-
-## Structure
+## Repository Structure
 
 ```
-workflow-prompts/
-├── CLAUDE.md                    # Main entry point for Claude Code
-├── AGENTS.md                    # Main entry point for other AI assistants
-└── rules-for-agents/
-    ├── agentic-workflows/       # PRD, Planning, and Builder workflows
-    ├── api-documentation/       # API documentation standards
-    └── coding/                  # Coding rules and best practices
+ai-development-workflows/
+│
+│  Developer Toolkit (drop into your project)
+├── CLAUDE.md / AGENTS.md          # Entry points for AI assistants
+├── documentation/                 # Project context template
+├── rules-for-agents/              # Coding rules, workflows, API docs
+│   ├── agentic-workflows/         #   PRD → Planning → Builder
+│   ├── coding/                    #   Angular, Fastify, refactoring rules
+│   └── api-documentation/         #   OpenAPI standards
+│
+│  From Our Production System
+├── real-world-examples/           # Rules, commands, procedures, examples
+│   ├── agent-rules.md             #   How we configure our dev agent
+│   ├── commands/                  #   Quality review prompts
+│   ├── procedures/                #   Feature exploration + development
+│   └── task-lifecycle-example/    #   Real feature: discovery → delivery
+│
+├── system-architecture/           # Multi-agent system design insights
+│   ├── multi-agent-architecture.md
+│   ├── memory-system.md
+│   ├── task-management.md
+│   ├── agent-communication.md
+│   └── self-improvement.md
+│
+└── bonus/
+    └── the-day-i-met-onyx.md      # When our AI agent chose its name
 ```
-
-## Customization
-
-These workflows are templates designed to be adapted. Here's what to customize:
-
-### Essential Changes
-
-1. **Tech Stack** — Update `rules-for-agents/coding/001-general-coding-rules.md` to reflect your stack
-2. **Project Context** — Create `documentation/about-project.md` with your project details
-3. **Coding Rules** — Modify files in `rules-for-agents/coding/` to match your conventions
-4. **API Standards** — Adapt `rules-for-agents/api-documentation/` if you use different API patterns
-
-### Optional Customizations
-
-- Adjust workflow phases to fit your team's process
-- Add project-specific requirements and constraints
-- Remove sections that don't apply (e.g., API docs if you're not building APIs)
-- Extend with additional rules for your specific domain
-
-## Contributing
-
-Found ways to improve these workflows? Contributions are welcome! Please open an issue or pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT — see [LICENSE](LICENSE).
 
 ## Attribution
 
-If you use these workflows, please link back to this repository. We'd love to hear how they're working for you!
-
-## Questions?
-
-Open an issue in this repository for questions, suggestions, or to share your experience using these workflows.
+If you use these workflows, we'd appreciate a link back to this repository.
 
 ---
 
