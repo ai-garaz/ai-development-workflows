@@ -4,11 +4,9 @@ These are the prompts that power our AI-first development workflow. They come fr
 
 We share them as practical reference, not as plug-and-play tools. They're shaped by our codebase, our tools, and our team. The value is in the patterns and thinking, not in copying the files verbatim.
 
+The agent rules themselves live in the root [`CLAUDE.md`](../CLAUDE.md) — that file IS a real-world example of how we structure our development agent's rules.
+
 ## What's Here
-
-### [Agent Rules](agent-rules.md)
-
-A curated excerpt from the CLAUDE.md file we use for our development agent. Shows how we structure rules for an agent that works on a real codebase across multiple sessions — core principles, model selection guidance, workspace organization, and multi-language conventions.
 
 ### [Commands](commands/)
 

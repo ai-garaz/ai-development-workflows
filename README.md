@@ -6,9 +6,8 @@ A collection of structured prompts, coding rules, and real-world examples for AI
 
 ### 1. Developer Toolkit
 
-Drop-in rules and workflow prompts you can add to any project:
+Drop-in rules and coding standards you can add to any project:
 
-- **Agent Workflows** — Structured prompts for PRD creation, task planning, and implementation
 - **Coding Rules** — Language and framework-specific best practices (Angular 20+, PrimeNG 20+, Fastify/TypeScript)
 - **API Documentation Standards** — Guidelines for reading and writing OpenAPI documentation
 
@@ -19,13 +18,12 @@ The toolkit lives at the root of this repository. `CLAUDE.md` and `AGENTS.md` ar
 2. Create `documentation/about-project.md` with your project details (see template)
 3. AI assistants auto-detect the rules and follow the workflows
 
-The coding rules are optimized for **Angular 20+ / PrimeNG 20+ / Fastify (TypeScript)**, but the workflow patterns (PRD → Planning → Building) are framework-agnostic and can be adapted to any stack.
+The coding rules are optimized for **Angular 20+ / PrimeNG 20+ / Fastify (TypeScript)**, but can be adapted to any stack.
 
 ### 2. Real-World Examples
 
-Prompts and workflows from our production AI-assisted development system. These are the actual rules, commands, and procedures that power our day-to-day development with AI agents:
+Prompts and workflows from our production AI-assisted development system. The `CLAUDE.md` at root IS our real agent rules file. The `real-world-examples/` folder contains the rest:
 
-- **Agent rules** — how we structure our CLAUDE.md for a development agent
 - **Commands** — review and quality prompts we invoke during development
 - **Procedures** — step-by-step workflows for feature exploration and implementation
 - **Task lifecycle example** — a complete feature from discovery through delivery
@@ -61,14 +59,12 @@ ai-development-workflows/
 │  Developer Toolkit (drop into your project)
 ├── CLAUDE.md / AGENTS.md          # Entry points for AI assistants
 ├── documentation/                 # Project context template
-├── rules-for-agents/              # Coding rules, workflows, API docs
-│   ├── agentic-workflows/         #   PRD → Planning → Builder
+├── rules-for-agents/              # Coding rules and API docs
 │   ├── coding/                    #   Angular, Fastify, refactoring rules
 │   └── api-documentation/         #   OpenAPI standards
 │
 │  From Our Production System
-├── real-world-examples/           # Rules, commands, procedures, examples
-│   ├── agent-rules.md             #   How we configure our dev agent
+├── real-world-examples/           # Commands, procedures, examples
 │   ├── commands/                  #   Quality review prompts
 │   ├── procedures/                #   Feature exploration + development
 │   └── task-lifecycle-example/    #   Real feature: discovery → delivery
