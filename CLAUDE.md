@@ -52,6 +52,16 @@ All rules are in `rules-for-agents/coding/`:
 
 Guidelines for reading and writing OpenAPI documentation are in `rules-for-agents/api-documentation/`.
 
+## AI Code Review
+
+Every PR to this repository is reviewed by the AI review workflow
+(`.github/workflows/claude-code-review.yml`). Repo-specific review
+configuration lives in `REVIEW.md` at the repo root — keep it current, and
+feed review false positives back into its "do NOT flag" list. Since this repo
+is prose, most PRs classify as the cheap docs-only tier (consistency and
+factual-claim checks). Maintainers can skip a review with a
+`break-glass: <reason>` comment or the `skip-ai-review` label.
+
 ## Git Worktree Workflow
 
 Multiple sessions may work on code concurrently (different issues, different team members). To prevent git state collisions, **all code modifications happen in git worktrees**, never in the main checkout.
